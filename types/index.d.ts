@@ -331,9 +331,11 @@ declare interface getBankByAccountIdProps {
   accountId: string;
 }
 
+const formSchema = authFormSchema("sign-up");
+
 declare interface customInputProps {
-  control: Control<z.infer<typeof authFormSchema>>;
-  name: FieldPath<z.infer<typeof authFormSchema>>;
+  control: Control<z.infer<typeof formSchema>>;
+  name: FieldPath<z.infer<typeof formSchema>>;
   label: string;
   placeholder: string;
 }
