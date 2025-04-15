@@ -15,7 +15,7 @@ const Home = () => {
         <header className="home-header">
           <HeaderBox
             type="greeting"
-            title="Hello"
+            title="Welcome,"
             user={loggedIn?.firstName || "Guest"}
             subtext="Access and manage your accounts and transactions efficiently."
           />
