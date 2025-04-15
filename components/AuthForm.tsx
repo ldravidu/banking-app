@@ -77,20 +77,36 @@ const AuthForm = ({ type }: { type: string }) => {
                 label="Password"
                 placeholder="Enter your password"
               />
-              <Button className="form-btn" type="submit" disabled={isLoading}>
-                {isLoading ? (
-                  <>
-                    <Loader2 size={20} className="animate-spin" />
-                    {type === "sign-in" ? "Signing In..." : "Signing Up..."}
-                  </>
-                ) : type === "sign-in" ? (
-                  "Sign In"
-                ) : (
-                  "Sign Up"
-                )}
-              </Button>
+              <div className="flex flex-col gap-4">
+                <Button className="form-btn" type="submit" disabled={isLoading}>
+                  {isLoading ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      {type === "sign-in" ? "Signing In..." : "Signing Up..."}
+                    </>
+                  ) : type === "sign-in" ? (
+                    "Sign In"
+                  ) : (
+                    "Sign Up"
+                  )}
+                </Button>
+              </div>
             </form>
           </Form>
+
+          <footer className="flex justify-center gap-1">
+            <p className="text-14 font-normal text-gray-600">
+              {type === "sign-in"
+                ? "Don't have an account?"
+                : "Have an account?"}
+            </p>
+            <Link
+              href={type === "sign-in" ? "/sign-up" : "/sign-in"}
+              className="form-link"
+            >
+              {type === "sign-in" ? "Sign Up" : "Sign In"}
+            </Link>
+          </footer>
         </>
       )}
     </section>
